@@ -3,7 +3,7 @@
 ![Nuget](https://img.shields.io/nuget/v/Fedandburk.Common.Extensions.svg)
 [![CI](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml)
 [![CD](https://github.com/fedandburk/net-common-extensions/actions/workflows/cd.yml/badge.svg)](https://github.com/fedandburk/net-common-extensions/actions/workflows/cd.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/fedandburk/net.common.extensions/badge)](https://www.codefactor.io/repository/github/fedandburk/net.common.extensions)
+[![CodeFactor](https://www.codefactor.io/repository/github/fedandburk/net-common-extensions/badge)](https://www.codefactor.io/repository/github/fedandburk/net-common-extensions)
 
 ## Installation
 
