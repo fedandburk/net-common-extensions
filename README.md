@@ -1,4 +1,4 @@
-# Extensions for .Net
+# Extensions for .NET
 ![GitHub](https://img.shields.io/github/license/fedandburk/net-common-extensions.svg)
 ![Nuget](https://img.shields.io/nuget/v/Fedandburk.Common.Extensions.svg)
 [![CI](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml)
