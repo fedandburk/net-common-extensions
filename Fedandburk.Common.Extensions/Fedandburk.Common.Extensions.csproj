@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <PackageId>Fedandburk.Common.Extensions</PackageId>
+        <PackageVersion>1.0.7</PackageVersion>
+        <Title>.Net Extensions</Title>
+        <Description>A collection of extensions for .Net.</Description>
+        <Copyright>FEDANDBURK</Copyright>
+        <Authors>Prin53, FEDANDBURK</Authors>
+        <Owners>Prin53, FEDANDBURK</Owners>
+        <NeutralLanguage>en</NeutralLanguage>
+        <PackageTags>dotnet, extensions</PackageTags>
+        <PackageIconUrl>https://static.fedandburk.com/logo.svg</PackageIconUrl>
+        <PackageProjectUrl>https://github.com/fedandburk/net-common-extensions</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReleaseNotes>Update Microsoft.NET.Test.Sdk to 16.8.3; Use net7.0</PackageReleaseNotes>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fedandburk/net-common-extensions</RepositoryUrl>
+    </PropertyGroup>
+
+</Project>
