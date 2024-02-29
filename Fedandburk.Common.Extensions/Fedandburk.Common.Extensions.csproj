@@ -5,8 +5,8 @@
         <Nullable>enable</Nullable>
         <PackageId>Fedandburk.Common.Extensions</PackageId>
         <PackageVersion>1.0.8</PackageVersion>
-        <Title>.Net Extensions</Title>
-        <Description>A collection of extensions for .Net.</Description>
+        <Title>.NET Extensions</Title>
+        <Description>A collection of extensions for .NET.</Description>
         <Copyright>FEDANDBURK</Copyright>
         <Authors>Prin53, FEDANDBURK</Authors>
         <Owners>Prin53, FEDANDBURK</Owners>
