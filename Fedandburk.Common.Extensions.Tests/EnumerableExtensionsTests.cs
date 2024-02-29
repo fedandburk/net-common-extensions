@@ -48,7 +48,7 @@ public class EnumerableExtensionsTests
 
             equalityComparer.Received().Equals(Arg.Any<object>(), Arg.Any<object>());
 
-            Assert.AreEqual(5, result);
+            Assert.That(result, Is.EqualTo(5));
         }
     }
 
@@ -87,7 +87,7 @@ public class EnumerableExtensionsTests
 
             equalityComparer.Received().Equals(Arg.Any<int>(), Arg.Any<int>());
 
-            Assert.AreEqual(5, result);
+            Assert.That(result, Is.EqualTo(5));
         }
     }
 
@@ -118,7 +118,7 @@ public class EnumerableExtensionsTests
 
                 var result = enumerable.Take(index, length);
 
-                Assert.AreEqual(enumerable.ToList().GetRange(index, length), result);
+                Assert.That(result, Is.EqualTo(enumerable.ToList().GetRange(index, length)));
             }
         }
 
@@ -133,7 +133,7 @@ public class EnumerableExtensionsTests
 
             var result = enumerable.Take(index, length);
 
-            Assert.AreEqual(enumerable.ToList().GetRange(index, length), result);
+            Assert.That(result, Is.EqualTo(enumerable.ToList().GetRange(index, length)));
         }
     }
 
@@ -146,7 +146,7 @@ public class EnumerableExtensionsTests
             [Test]
             public void TrueShouldBeReturned()
             {
-                Assert.IsTrue(default(IEnumerable).IsNullOrEmpty());
+                Assert.That(default(IEnumerable).IsNullOrEmpty(), Is.True);
             }
         }
 
@@ -156,7 +156,7 @@ public class EnumerableExtensionsTests
             [Test]
             public void TrueShouldBeReturned()
             {
-                Assert.IsTrue(Enumerable.Empty<int>().IsNullOrEmpty());
+                Assert.That(Enumerable.Empty<int>().IsNullOrEmpty(), Is.True);
             }
         }
 
@@ -166,7 +166,7 @@ public class EnumerableExtensionsTests
             [Test]
             public void FalseShouldBeReturned()
             {
-                Assert.IsFalse(Enumerable.Range(0, 10).IsNullOrEmpty());
+                Assert.That(Enumerable.Range(0, 10).IsNullOrEmpty(), Is.False);
             }
         }
     }
@@ -194,7 +194,7 @@ public class EnumerableExtensionsTests
             {
                 var enumerable = Enumerable.Range(0, count).ToList();
 
-                Assert.AreEqual(count, enumerable.Count());
+                Assert.That(count, Is.EqualTo(enumerable.Count()));
             }
         }
 
@@ -205,7 +205,7 @@ public class EnumerableExtensionsTests
         {
             var enumerable = Enumerable.Range(0, count) as IEnumerable;
 
-            Assert.AreEqual(count, enumerable.Count());
+            Assert.That(count, Is.EqualTo(enumerable.Count()));
         }
     }
 
@@ -230,7 +230,7 @@ public class EnumerableExtensionsTests
         {
             var enumerable = values.Select(TimeSpan.FromTicks);
 
-            Assert.AreEqual(TimeSpan.FromTicks(values.Sum()), enumerable.Sum());
+            Assert.That(TimeSpan.FromTicks(values.Sum()), Is.EqualTo(enumerable.Sum()));
         }
     }
 
@@ -271,7 +271,7 @@ public class EnumerableExtensionsTests
                 return TimeSpan.FromTicks(item);
             });
 
-            Assert.AreEqual(values.Length, count);
+            Assert.That(count, Is.EqualTo(values.Length));
         }
 
         [Test]
@@ -280,7 +280,7 @@ public class EnumerableExtensionsTests
         [TestCase(new[] { 100L, 1000L, 10000L })]
         public void SumShouldBeReturned(long[] values)
         {
-            Assert.AreEqual(TimeSpan.FromTicks(values.Sum()), values.Sum(TimeSpan.FromTicks));
+            Assert.That(values.Sum(TimeSpan.FromTicks), Is.EqualTo(TimeSpan.FromTicks(values.Sum())));
         }
     }
 }

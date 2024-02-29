@@ -15,7 +15,7 @@ public class StringExtensionsTests
         [TestCase("string")]
         public void ResultOfIsNullOrEmptyShouldBeReturned(string input)
         {
-            Assert.AreEqual(string.IsNullOrEmpty(input), input.IsNullOrEmpty());
+            Assert.That(input.IsNullOrEmpty(), Is.EqualTo(string.IsNullOrEmpty(input)));
         }
     }
 
@@ -29,7 +29,7 @@ public class StringExtensionsTests
         [TestCase("string")]
         public void ResultOfIsNullOrWhiteSpaceShouldBeReturned(string input)
         {
-            Assert.AreEqual(string.IsNullOrWhiteSpace(input), input.IsNullOrWhiteSpace());
+            Assert.That(input.IsNullOrWhiteSpace(), Is.EqualTo(string.IsNullOrWhiteSpace(input)));
         }
     }
 }

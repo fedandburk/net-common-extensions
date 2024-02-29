@@ -1,9 +1,9 @@
-# Extensions for .Net
-![GitHub](https://img.shields.io/github/license/Fedandburk/Net.Common.Extensions.svg)
+# Extensions for .NET
+![GitHub](https://img.shields.io/github/license/fedandburk/net-common-extensions.svg)
 ![Nuget](https://img.shields.io/nuget/v/Fedandburk.Common.Extensions.svg)
-[![CI](https://github.com/Fedandburk/Net.Common.Extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/SByteDev/Net.Common.Extensions/actions/workflows/ci.yml)
-[![CD](https://github.com/Fedandburk/Net.Common.Extensions/actions/workflows/cd.yml/badge.svg)](https://github.com/Fedandburk/Net.Common.Extensions/actions/workflows/cd.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/fedandburk/net.common.extensions/badge)](https://www.codefactor.io/repository/github/fedandburk/net.common.extensions)
+[![CI](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/fedandburk/net-common-extensions/actions/workflows/ci.yml)
+[![CD](https://github.com/fedandburk/net-common-extensions/actions/workflows/cd.yml/badge.svg)](https://github.com/fedandburk/net-common-extensions/actions/workflows/cd.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/fedandburk/net-common-extensions/badge)](https://www.codefactor.io/repository/github/fedandburk/net-common-extensions)
 
 ## Installation
 
@@ -32,6 +32,26 @@ var isExecuted = Command.SafeExecute(parameter);
 ```
 
 ### IEnumerable Extensions
+To transform a two-dimensional collection or an `ObservableCollection` into a single-dimensional collection and keep the `CollectionChanged` events:
+
+```cs
+Items = new ObservableCollection<ObservableCollection<int>>
+{
+    new ObservableCollection<int> { 1, 2 },
+    new ObservableCollection<int> { 3 }
+};
+
+IEnumerable<int> flatItems = Items.ObservableFlatten();
+```
+
+To transform each element of a collection into a new form and keep the `CollectionChanged` events:
+
+```cs
+Items = new ObservableCollection<int> {1, 2, 3, 4, 5, 6};
+
+IEnumerable<string> wrappedItems = Items.ObservableSelect(item => item.ToString());
+```
+
 To search for the specified object and get the index of its first occurrence in a collection:
 
 ```cs
@@ -64,6 +84,17 @@ To compute the sum of a sequence of TimeSpan values:
 ```cs
 var sum = new[] {100L, 1000L, 10000L}.Sum(TimeSpan.FromTicks);
 var sum = new[] {TimeSpan.FromDays(1), TimeSpan.FromHours(2)}.Sum();
+```
+
+### INotifyCollectionChanged Extensions
+To safely subscribe to the `CollectionChanged` event of an `INotifyCollectionChanged`-based collection:
+
+```cs
+Items = new ObservableCollection { 1, 2, 3 };
+
+void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs args) {}
+
+IDisposable subscription = Items.WeakSubscribe(OnCollectionChanged);
 ```
 
 ### String Extensions

@@ -41,7 +41,7 @@ public class CommandExtensionsTests
                 const int parameter = 1;
                 var command = Substitute.For<ICommand>();
 
-                Assert.False(command.SafeCanExecute(parameter));
+                Assert.That(command.SafeCanExecute(parameter), Is.False);
             }
 
             [Test]
@@ -66,7 +66,7 @@ public class CommandExtensionsTests
                 var command = Substitute.For<ICommand>();
                 command.CanExecute(Arg.Any<object>()).Returns(true);
 
-                Assert.True(command.SafeCanExecute(parameter));
+                Assert.That(command.SafeCanExecute(parameter), Is.True);
             }
 
             [Test]
@@ -129,7 +129,8 @@ public class CommandExtensionsTests
                 const int parameter = 1;
                 var command = Substitute.For<ICommand>();
 
-                Assert.False(command.SafeExecute(parameter));
+                Assert.That(command.SafeCanExecute(parameter), Is.False);
+
             }
         }
 
@@ -155,7 +156,7 @@ public class CommandExtensionsTests
                 var command = Substitute.For<ICommand>();
                 command.CanExecute(Arg.Any<object>()).Returns(true);
 
-                Assert.True(command.SafeExecute(parameter));
+                Assert.That(command.SafeCanExecute(parameter), Is.True);
             }
         }
     }
