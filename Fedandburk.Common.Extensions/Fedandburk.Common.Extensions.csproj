@@ -4,7 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <PackageId>Fedandburk.Common.Extensions</PackageId>
-        <PackageVersion>1.0.7</PackageVersion>
+        <PackageVersion>1.0.8</PackageVersion>
         <Title>.Net Extensions</Title>
         <Description>A collection of extensions for .Net.</Description>
         <Copyright>FEDANDBURK</Copyright>
@@ -16,7 +16,7 @@
         <PackageProjectUrl>https://github.com/fedandburk/net-common-extensions</PackageProjectUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageReleaseNotes>Update Microsoft.NET.Test.Sdk to 16.8.3; Use net7.0</PackageReleaseNotes>
+        <PackageReleaseNotes>Bring WrappedObservableCollection and FlatObservableCollection from Fedandburk.MvvmCross.Extensions plugin.</PackageReleaseNotes>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fedandburk/net-common-extensions</RepositoryUrl>
